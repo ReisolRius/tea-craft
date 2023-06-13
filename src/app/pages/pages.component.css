@@ -1,0 +1,15 @@
+.pages {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border:  1px solid #fff;
+    border-radius: .5em;
+    margin-top: .8em;
+}
+
+.pages p {
+    padding: .4em .5em;
+    margin-right: .4em;
+}

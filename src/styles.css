@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+    cursor: default;
+}
+
+body {
+    /* background: url('assets/img/body_background/background.png'); */
+    background: url('assets/img/body_background/Group 24.png');
+    background-size: 100%;
+    z-index: 1;
+}
+
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.blur {
+    height: 100%;
+    width: 100%;
+    filter: blur(8px);
+    position: absolute;
+    backdrop-filter: blur(20px);
+    z-index: -5;
+}

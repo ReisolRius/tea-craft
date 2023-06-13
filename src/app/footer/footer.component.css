@@ -1,0 +1,11 @@
+.footer {
+    width: 100%;
+    text-align: right;
+    color: #fff;
+    font-size: .5em;
+    margin-top: 1em;
+}
+
+.footer h1 {
+    opacity: 50%;
+}

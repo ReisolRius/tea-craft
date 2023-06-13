@@ -1,0 +1,62 @@
+<div class="content-container">
+    <div class="modpacks">
+        <div *ngFor="let modpack of filteredModpacks" class="modpack | slice:0:size">
+            <div class="modpack__info">
+                <p class="modpack__name">{{modpack.name}} [{{modpack.version}}] [{{modpack.type}}]</p>
+                <p class="modpack__date">{{modpack.date}}</p>
+            </div>
+            <div class="modpack__img">
+               <a href="#"><img [attr.src]="modpack.img" alt="not found"></a>
+            </div>
+            <div class="modpack__description"><p>{{modpack.description}}</p></div>
+            <div class="modpack__info">
+                <div class="themes">
+                    <p [class]="modpack.themeClass_1">{{modpack.theme_1}}</p>
+                    <p [class]="modpack.themeClass_2">{{modpack.theme_2}}</p>
+                    <p [class]="modpack.themeClass_3">{{modpack.theme_3}}</p>
+                </div>
+                <div class="modpack__info-views">
+                    <p>{{modpack.views}}</p>
+                    <img src="assets/img/modpacks/views.png" alt="not found">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content__menu">
+        <h1>Фильтры</h1>
+        <div class="filter">
+            <p>Версии</p>
+            <div class="choose">
+                <p (click)="onSelectVersion(version.id)"
+                [class.chosen]="version.id === selectedVersionId"
+                [class.item__desibled]="!isPossibleVersion(version.id)"
+                *ngFor="let version of versions">{{version.versions}}</p>
+            </div>
+        </div>
+        <div class="filter">
+            <p>Тематики</p>
+            <div class="choose">
+                <p (click)="onSelectTheme(theme.id)" 
+                [class.chosen]="theme.id == selectedThemeId" 
+                [class.item__desibled]="!isPossibleTheme(theme.id)"
+                *ngFor="let theme of themes">{{theme.theme}}</p>
+            </div>
+        </div>
+        <div class="filter">
+            <p>Ядро</p>
+            <div class="choose">
+                <p (click)="onSelectType(type.id)" 
+                [class.chosen]="type.id == selectedTypeId" 
+                [class.item__desibled]="!isPossibleType(type.id)"
+                *ngFor="let type of types">{{type.text}}</p>
+            </div>
+        </div>
+        <h1>Полезные ссылки</h1>
+        <div class="content__menu-links">
+            <a href="#">Дискорд сервер</a>
+            <a href="#">Телеграмм канал</a>
+            <a href="#">Вк группа разработчика</a>
+        </div>
+    </div>
+</div>
+<app-pages></app-pages>

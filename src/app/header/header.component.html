@@ -1,0 +1,39 @@
+    <div class="header">
+        <div class="header__logo">
+            <img src="/assets/img/header_img/header_logo.png" alt="not found">
+        </div>
+        <div class="header__links">
+            <ul>
+                <li routerLink="{{menuItem.link}}" (click)="onSelect(menuItem.id)" [class.header__active]="menuItem.id === selectedMenuItemId" *ngFor="let menuItem of menuItems">{{menuItem.text}}</li>
+            </ul>
+        </div>
+                    <div [class]="{hide:goLogin}" (click)="goClear()" class="header__login" routerLink="login">Вход</div>
+            <div [class]="{hide:goRegister}" (click)="goClear()" class="header__login" routerLink="register">Регестрация</div>
+    </div>
+
+    <div class="header__mobile" [class]="{showMe: menuFlag, header__mobile_active:backFlag}" data-background="#1f1f1fdd">
+        <div (click)="openMenu()" class="mobile__button" [class]="{beTogether: menuFlag, goRotate:menuFlag}">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="mobile__menu" [class]="{goBlock:menuFlag, goVision:menuFlag}">
+        <div class="logo">
+            <img src="assets/img/header_img/header_logo.png" alt="not found">
+        </div>
+        <div class="mobile__menu-container">
+            <ul>
+                <li routerLink="{{menuItem.link}}" (click)="onSelect(menuItem.id)" [class.header__active]="menuItem.id === selectedMenuItemId" *ngFor="let menuItem of menuItems | slice:0:2">{{menuItem.text}}</li>
+            </ul>
+            <div [class]="{hide:goLogin}" (click)="goClear()" class="header__login" routerLink="login">Вход</div>
+            <div [class]="{hide:goRegister}" (click)="goClear()" class="header__login" routerLink="register">Регестрация</div>
+        </div>
+        <div class="mobile__menu-container">
+            <ul>
+                <li>F.A.Q</li>
+                <li>Support</li>
+                <li>Discord</li>
+            </ul>
+        </div>
+    </div>
